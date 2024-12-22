@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Eats - Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section with Hamburger Menu -->
+    <header>
+        <div class="logo">
+            <h1>Delicious Eats</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h2>Welcome to Delicious Eats</h2>
+            <p>Your favorite restaurant for fresh, tasty meals!</p>
+            <a href="#menu" class="cta-btn">Explore Menu</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="/imgs/pasta.jpeg" alt="Pasta">
+                <h3>Pasta</h3>
+                <p>Classic Italian pasta with a delicious sauce.</p>
+                <p>$12.99</p>
+            </div>
+            <div class="menu-item">
+                <img src="/imgs/burger.jpeg" alt="Burger">
+                <h3>Burger</h3>
+                <p>Juicy beef burger with crispy fries.</p>
+                <p>$9.99</p>
+            </div>
+            <div class="menu-item">
+                <img src="/imgs/salad.jpeg" alt="Salad">
+                <h3>Salad</h3>
+                <p>Fresh greens with a light vinaigrette.</p>
+                <p>$7.99</p>
+            </div>
+            <div class="menu-item">
+                <img src="/imgs/milkshakes.jpeg" alt="milkshake">
+                <h3>Milk shake</h3>
+                <p>Fresh banana with a condensed milk.</p>
+                <p>$7.99</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Delicious Eats is dedicated to serving you the finest and most delicious meals made with love and fresh ingredients. Our chefs are passionate about delivering the best dining experience for our customers.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+        <div id="form-response"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Delicious Eats. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
