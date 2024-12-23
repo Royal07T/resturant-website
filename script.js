@@ -1,23 +1,37 @@
-// JavaScript to handle the hamburger menu toggle
-const hamburgerMenu = document.getElementById('hamburger-menu');
-const navLinks = document.querySelector('.nav-links');
+document.addEventListener("DOMContentLoaded", () => {
+    const navToggle = document.querySelector("#hamburger-menu");
+    const navLinks = document.querySelector("nav ul");
+    const backToTopButton = document.getElementById("back-to-top");
 
-hamburgerMenu.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
+    // Toggle Navigation Menu on Hamburger Click
+    navToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
 
-// JavaScript to handle the contact form submission
-document.getElementById("contact-form").addEventListener("submit", function(e) {
-    e.preventDefault();
+    // Smooth Scrolling for Navigation Links
+    document.querySelectorAll("nav ul li a").forEach(link => {
+        link.addEventListener("click", event => {
+            event.preventDefault();
+            const targetId = event.target.getAttribute("href").slice(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth" });
+                navLinks.classList.remove("active"); // Close menu after selection
+            }
+        });
+    });
 
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
+    // Show/Hide Back-to-Top Button on Scroll
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add("show");
+        } else {
+            backToTopButton.classList.remove("show");
+        }
+    });
 
-    if (name && email && message) {
-        document.getElementById("form-response").innerHTML = "<p>Thank you for your message! We'll get back to you soon.</p>";
-        document.getElementById("contact-form").reset();
-    } else {
-        document.getElementById("form-response").innerHTML = "<p>Please fill in all fields.</p>";
-    }
+    // Smooth Scroll Back to Top
+    backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 });
